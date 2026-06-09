@@ -13,7 +13,7 @@ export default function ProductsPage() {
   const fetchProducts = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/products"
+        "/api/products"
       );
 
       setProducts(res.data);
