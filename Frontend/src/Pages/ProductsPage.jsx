@@ -13,7 +13,7 @@ export default function ProductsPage() {
   const fetchProducts = async () => {
     try {
       const res = await axios.get(
-        "/api/products"
+        "https://stepway-backend.vercel.app/api/products"
       );
 
       setProducts(res.data);
