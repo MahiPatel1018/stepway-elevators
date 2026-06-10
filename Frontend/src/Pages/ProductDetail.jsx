@@ -8,8 +8,9 @@ export default function ProductDetail() {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/api/products/${slug}`)
+    axios.get(
+  `https://stepway-backend.vercel.app/api/products/${slug}`
+)
       .then((res) => setProduct(res.data))
       .catch((err) => console.log(err));
   }, [slug]);
