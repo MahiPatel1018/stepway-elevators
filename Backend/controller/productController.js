@@ -11,9 +11,11 @@ const {
 const fetchProducts = (req, res) => {
   getProducts((err, results) => {
     if (err) {
+      console.error("PRODUCT ERROR:", err);
+
       return res.status(500).json({
         success: false,
-        message: "Error fetching products",
+        message: err.message,
       });
     }
 
