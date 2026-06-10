@@ -44,7 +44,7 @@ function AdminDashboard() {
   const fetchProducts = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/products"
+        "https://stepway-backend.vercel.app/api/products"
       );
 
       setProducts(res.data);
