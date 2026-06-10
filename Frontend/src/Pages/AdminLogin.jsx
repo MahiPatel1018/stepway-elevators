@@ -13,15 +13,14 @@ function AdminLogin() {
     e.preventDefault();
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/admin/login",
-        {
-          username,
-          password,
-        }
-      );
-
-      localStorage.setItem(
+       const res = await axios.post(
+    "https://stepway-backend.vercel.app/api/admin/login",
+  {
+    username,
+    password,
+  }
+);
+localStorage.setItem(
         "token",
         res.data.token
       );
