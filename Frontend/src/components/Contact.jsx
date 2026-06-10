@@ -53,7 +53,7 @@ if (formData.message.trim().length < 10) {
     setLoading(true);
 
     const res = await axios.post(
-      "http://localhost:5000/api/contact",
+      "https://stepway-backend.vercel.app/api/contact",
       formData
     );
 

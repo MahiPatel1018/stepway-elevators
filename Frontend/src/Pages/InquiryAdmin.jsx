@@ -14,7 +14,7 @@ function InquiryAdmin() {
   const fetchContacts = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/contact"
+        "https://stepway-backend.vercel.app/api/contact"
       );
 
       setContacts(res.data);
@@ -28,7 +28,7 @@ function InquiryAdmin() {
 
   try {
     await axios.delete(
-      `http://localhost:5000/api/contact/${id}`,
+      `https://stepway-backend.vercel.app/api/contact/${id}`,
       {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,

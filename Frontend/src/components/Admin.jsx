@@ -39,7 +39,7 @@ function Layout() {
   const fetchContacts = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/contact"
+       "https://stepway-backend.vercel.app/api/contact"
       );
 
       setContacts(res.data);
@@ -51,7 +51,7 @@ function Layout() {
   const fetchProducts = async () => {
   try {
     const res = await axios.get(
-      "http://localhost:5000/api/products"
+     "https://stepway-backend.vercel.app/api/products"
     );
 
     setProducts(res.data);
@@ -75,7 +75,7 @@ function Layout() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/contact/${id}`
+        `https://stepway-backend.vercel.app/api/contact/${id}`
       );
 
       toast.success("Inquiry deleted successfully");

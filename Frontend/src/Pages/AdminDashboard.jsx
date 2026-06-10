@@ -32,7 +32,7 @@ function AdminDashboard() {
   const fetchContacts = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/contact"
+  "https://stepway-backend.vercel.app/api/contact"
       );
 
       setContacts(res.data);
