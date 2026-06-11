@@ -7,6 +7,45 @@ export default function ProductDetail() {
   const { slug } = useParams();
   const [product, setProduct] = useState(null);
 
+  const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  phone: "",
+  subject: "",
+  message: "",
+});
+
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    await axios.post(
+      "https://stepway-backend.vercel.app/api/contact",
+      formData
+    );
+
+    alert("Inquiry submitted successfully!");
+
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    });
+  } catch (error) {
+    console.log(error);
+    alert("Failed to submit inquiry");
+  }
+};
+
   useEffect(() => {
     axios.get(
   `https://stepway-backend.vercel.app/api/products/${slug}`
@@ -203,7 +242,7 @@ export default function ProductDetail() {
   </div>
 </section>
 
-{/* Action Buttons */}
+
 {/* Action Buttons */}
 <div className="max-w-7xl mx-auto px-6 pt-16 pb-20">
   <div className="flex flex-wrap justify-center gap-5">
@@ -232,39 +271,53 @@ export default function ProductDetail() {
               For Inquiry
             </h2>
 
-            <form className="mt-8 grid md:grid-cols-2 gap-5">
-
-              <input
+           <form
+              onSubmit={handleSubmit}
+              className="mt-8 grid md:grid-cols-2 gap-5"
+            >
+             <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Your Name"
                 className="w-full rounded-xl border border-slate-300 px-4 py-3"
               />
-
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Your Email"
                 className="w-full rounded-xl border border-slate-300 px-4 py-3"
               />
 
-              <input
+             <input
                 type="text"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 placeholder="Your Phone"
                 className="w-full rounded-xl border border-slate-300 px-4 py-3"
               />
 
               <input
                 type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
                 placeholder="Subject"
                 className="w-full rounded-xl border border-slate-300 px-4 py-3"
               />
 
-              <div className="md:col-span-2">
-                <textarea
-                  rows="5"
-                  placeholder="Your Message"
-                  className="w-full rounded-xl border border-slate-300 px-4 py-3"
-                ></textarea>
-              </div>
+             <textarea
+                rows="5"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Your Message"
+                className="w-full rounded-xl border border-slate-300 px-4 py-3"
+              />
 
               <div className="md:col-span-2 text-center">
                 <button
