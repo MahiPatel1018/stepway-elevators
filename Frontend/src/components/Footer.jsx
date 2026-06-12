@@ -114,13 +114,17 @@ export default function Footer() {
               </div>
 
               <div className="flex items-start gap-3">
-                <MapPin size={18} className="text-blue-400 mt-1" />
-                <span>
-                  Gota, Ahmedabad,
-                  <br />
-                  Gujarat - 382481
-                </span>
-              </div>
+              <MapPin size={18} className="text-blue-400 mt-1" />
+              <span>
+                10-302, Ishwar Estate, Opp. Pushpraj Residency,
+                <br />
+                B/H Ishwar Saw Mill,
+                <br />
+                Under Vishwakarma Railway Bridge,
+                <br />
+                Gota, Ahmedabad - 382481
+              </span>
+            </div>
 
             </div>
           </div>
