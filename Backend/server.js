@@ -9,7 +9,11 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: [
+      "https://www.stepwayelevators.com",
+      "https://stepwayelevators.com",
+      "https://stepway-elevators.vercel.app",
+    ],
     credentials: true,
   })
 );
