@@ -1,24 +1,39 @@
+import { Helmet } from "react-helmet-async";
+import Contact from "../components/Contact";
+
 export default function HomeElevator() {
   return (
-    <div className="container mx-auto p-6">
-      <h1>Home Elevator in Ahmedabad</h1>
+    <>
+      <Helmet>
+        <title>Home Elevator in Ahmedabad | StepWay Elevators</title>
+        <meta
+          name="description"
+          content="Home elevator installation, AMC and maintenance services in Ahmedabad."
+        />
+      </Helmet>
 
-      <p>
-        StepWay Electricals & Elevators provides premium home elevator
-        installation services in Ahmedabad. Our home lifts are designed for
-        villas, duplex homes, bungalows and residential buildings, offering
-        comfort, safety and convenience.
-      </p>
+      <div className="bg-slate-900 text-white py-24 text-center">
+        <h1 className="text-5xl font-bold">
+          Home Elevator in Ahmedabad
+        </h1>
 
-      <h2>Our Services</h2>
-      <ul>
-        <li>Home Lift Installation</li>
-        <li>Annual Maintenance Contract (AMC)</li>
-        <li>Repair & Modernization</li>
-        <li>Safety Inspection</li>
-      </ul>
+        <p className="mt-4 text-slate-300">
+          Premium Home Lift Installation & Maintenance Services
+        </p>
+      </div>
 
-      <p>Contact: 8734048673</p>
-    </div>
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <h2 className="text-3xl font-bold mb-4">
+          Home Elevator Solutions
+        </h2>
+
+        <p>
+          StepWay Electricals & Elevators provides home elevator installation,
+          maintenance, modernization and AMC services in Ahmedabad.
+        </p>
+      </div>
+
+      <Contact />
+    </>
   );
 }
