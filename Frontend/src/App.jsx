@@ -20,7 +20,14 @@ import ProductDetail from "./Pages/ProductDetail";
 import ContactPage from "./Pages/ContactPage";
 import ServicesPage from "./Pages/ServicesPage";
 import AdminLogin from "./Pages/AdminLogin";
-
+import HomeElevator from "./Pages/HomeElevator";
+import PassengerLift from "./Pages/PassengerLift";
+import HospitalLift from "./Pages/HospitalLift";
+import FreightLift from "./Pages/FreightLift";
+import CapsuleLift from "./Pages/CapsuleLift";
+import CarLift from "./Pages/CarLift";
+import HydraulicLift from "./Pages/HydraulicLift";
+import MRLLift from "./Pages/MRLLift";
 // Lazy-loaded admin pages
 const AdminDashboard = lazy(() => import("./Pages/AdminDashboard"));
 const ProductAdmin = lazy(() => import("./Pages/ProductAdmin"));
@@ -49,7 +56,14 @@ function AppContent() {
           <Route path="/products/:slug" element={<ProductDetail />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
-
+          <Route path="/home-elevator-ahmedabad" element={<HomeElevator />} />
+            <Route path="/passenger-lift-ahmedabad" element={<PassengerLift />} />
+            <Route path="/hospital-lift-ahmedabad" element={<HospitalLift />} />
+            <Route path="/freight-lift-ahmedabad" element={<FreightLift />} />
+            <Route path="/capsule-lift-ahmedabad" element={<CapsuleLift />} />
+            <Route path="/car-lift-ahmedabad" element={<CarLift />} />
+            <Route path="/hydraulic-lift-ahmedabad" element={<HydraulicLift />} />
+            <Route path="/mrl-lift-ahmedabad" element={<MRLLift />} />
           {/* Admin Login */}
           <Route path="/admin-login" element={<AdminLogin />} />
 
